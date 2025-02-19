@@ -1,34 +1,28 @@
-#include<iostream>
-#include<ctime>
-int main(){
+#include <iostream>
+#include <cstdlib>  
+#include <ctime>   
 
-    std::cout<<"enter the guess limit: ";
-    int lim; 
-    std::cin>>lim;
-    srand ( time(0) ^ clock () );
-    const int num =rand() % lim;
-    while(true){
-          std::cout<<"enter the guess no: ";
-          int guess;
-          std::cin>>guess;
+using namespace std;
 
-          if( guess < num )
-          {
-          std::cout<<"your guess no is toooo small please retry\n";
-          continue;
-          }
-
-          else if( guess > num )
-          {
-          std::cout<<"your guess no is toooo large please retry\n";
-          continue;
-          }
-
-          
-          else  
-          {
-          std::cout<<"your guess perfect no!!";
-          break;
-          }
+int main() {
+    srand(time(0));  
+    int randomNumber = rand() % 100 + 1;  
+    int userGuess;
+    
+    cout << "Guess the number (between 1 and 100): ";
+    
+    while (true) {
+        cin >> userGuess;
+        
+        if (userGuess > randomNumber) {
+            cout << "Too high! Try again: ";
+        } else if (userGuess < randomNumber) {
+            cout << "Too low! Try again: ";
+        } else {
+            cout << "Congratulations! You guessed the correct number." << endl;
+            break;
+        }
     }
+    
+    return 0;
 }
