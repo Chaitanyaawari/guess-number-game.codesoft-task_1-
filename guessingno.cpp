@@ -1,15 +1,15 @@
 #include <iostream>
-#include <cstdlib>  
-#include <ctime>   
 
 using namespace std;
 
 int main() {
-    srand(time(0));  
-    int randomNumber = rand() % 100 + 1;  
-    int userGuess;
+    int randomNumber, userGuess;
     
-    cout << "Guess the number (between 1 and 100): ";
+    cout << "Welcome to the Number Guessing Game!" << endl;
+    cout << "Enter a number for others to guess: ";
+    cin >> randomNumber;
+    
+    cout << "Now, guess the number: ";
     
     while (true) {
         cin >> userGuess;
@@ -26,3 +26,4 @@ int main() {
     
     return 0;
 }
+
